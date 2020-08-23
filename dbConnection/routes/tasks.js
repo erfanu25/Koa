@@ -53,7 +53,7 @@ async function getContactById(contactId) {
 
  //post contact api endpoind and method
 
-router.post('/api/contacts', async ctx => {
+router.post('/api/contact', async ctx => {
     if(!ctx.request.body.name && !ctx.request.body.phoneNumber) {
         ctx.body = {
             error: 'Bad Data'

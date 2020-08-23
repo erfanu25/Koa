@@ -39,6 +39,21 @@ npm install  \
 npm start   \
 browse: http://localhost:3000/
 
+**API ENDPOINTS** \
+GET: \
+http://localhost:3000/api/contacts \
+http://localhost:3000/api/contact/:id
+
+POST: \
+http://localhost:3000/api/contact \
+
+DELETE: \
+http://localhost:3000/api/contact/:id
+
+PUT: \
+http://localhost:3000/api/contact/:id
+
+we can use this endpoints in other frontend framework
 <!--
 **Commands**
 

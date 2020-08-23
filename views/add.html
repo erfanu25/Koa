@@ -1,3 +1,20 @@
+<script>
+function myFunction() {
+  var inpName = document.getElementById("nameField");
+  var inpPhone = document.getElementById("phoneNumberField");
+  if (!inpName.checkValidity()) {
+    document.getElementById("name").innerHTML = inpName.validationMessage;
+  } else {
+    document.getElementById("name").innerHTML = null;
+  }
+
+  if (!inpPhone.checkValidity()) {
+    document.getElementById("phoneNumber").innerHTML = inpPhone.validationMessage;
+  } else {
+    document.getElementById("phoneNumber").innerHTML = null;
+  }
+} 
+  </script>
 <h4 class="mb-4">
   <%= action %> Contact
 </h4>
@@ -10,16 +27,20 @@
   <div class="form-group">
     <label>Name</label>
     <input type="hidden" name="id" value="<%= contact.id %>">
-    <input type="text" name="name" class="form-control form-control-lg" value="<%= contact.name %>" placeholder="Contact Name">
+    <input type="text" name="name" id="nameField" class="form-control form-control-lg" value="<%= contact.name %>"
+          placeholder="Contact Name" required onchange="myFunction()"> 
+          <p id="name" style="color:red;"></p>
   </div>
   <div class="form-group">
     <label>Phone Number</label>
-    <input type="text" name="phoneNumber" class="form-control form-control-lg" value="<%= contact.phoneNumber %>" placeholder="Enter Phone Number">
+    <input type="text" name="phoneNumber" id="phoneNumberField" pattern="^(?:\+88|01)?\d{11}$" class="form-control form-control-lg" 
+        value="<%= contact.phoneNumber %>" placeholder="Enter Phone Number" required onchange="myFunction()">
+        <p id="phoneNumber" style="color:red;"></p>
   </div>
   <div class="form-group">
     <label>Address</label>
     <input type="text" name="address" class="form-control form-control-lg" value="<%= contact.address %>" placeholder="Enter Address">
   </div>
-  <input type="submit" value="<%= action %>" class="btn btn-dark">
+  <input type="submit" value="<%= action %>" class="btn btn-dark" onclick="myFunction()">
   <a href="/" class="btn btn-danger">Cancel</a>
 </form>
