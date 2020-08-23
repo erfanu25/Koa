@@ -158,7 +158,7 @@ module.exports.getContacts = getContacts;
 module.exports.getContactById = getContactById;
 module.exports.addContact = addContact;
 module.exports.deleteContactById = deleteContactById;
-module.exports.updateContact = updateContact;
+module.exports.updateContact = updateContact
 // module.exports ={
 //     router, getContacts
 // }
