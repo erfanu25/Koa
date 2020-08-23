@@ -36,10 +36,10 @@ ALTER TABLE `contacts`
 
 **To run:**
 npm install
-npm run
+npm start
+browse: http://localhost:3000/
 
-
-
+<!--
 **Commands**
 
 npm init -y \
@@ -53,5 +53,5 @@ npm i -D nodemon  \
 
 to run: \
 npm start  \
-browse: http://localhost:3000/
 
+-->
