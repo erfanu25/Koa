@@ -34,9 +34,9 @@ ALTER TABLE `contacts`
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
-**To run:**
-npm install
-npm start
+**To run:**  \
+npm install  \
+npm start   \
 browse: http://localhost:3000/
 
 <!--
