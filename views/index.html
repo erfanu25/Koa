@@ -1,10 +1,37 @@
-<h1>
+<script language="JavaScript">
+  function deleteContact(id) {
+    alert(`Hello ${id}`)
+    $.ajax({
+    type: 'GET', // change this
+    url: 'http://localhost:3000/api/contact/' + id
+  });
+  }
+</script>
+<h4>
     <%- title %>
-</h1>
-<ui class="list-group">
-    <% things.forEach(thing => { %>
-     <li class="list-group-item">
-         <%= thing %>
-     </li>
-    <% }); %>
-</ui>
+</h4>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% contacts.forEach(function(contact, index) { %>
+      <tr>
+        <th scope="row"><%= index+1 %></th>
+        <td><%= contact.name %></td>
+        <td><%= contact.phoneNumber %></td>
+        <td>
+            <button class="btn" onclick="location.href='/details/<%= contact.id %>'"><i class="fa fa-info"></i></button>
+            <button type="button" class="btn" onclick="location.href='/edit/<%= contact.id %>'"><i class="fa fa-edit"></i></button>
+            <button class="btn" id="button" onclick="deleteContact(<%= contact.id %>)"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
