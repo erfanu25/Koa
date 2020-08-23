@@ -15,4 +15,7 @@ npm install touch-cli
 
 touch app.js  
 
-npm start  
+to run: \
+npm start  \
+browse: http://localhost:3000/
+
